@@ -19,7 +19,7 @@ extension UIButton {
         UIView.animate(withDuration: 0.1, animations: {
             self.alpha = 0.5
         }) { (completion) in
-            UIView.animate(withDuration: 0.1, animations: { self.transform = .identity })
+            self.alpha = 1
         }
     }
 
