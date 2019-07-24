@@ -44,7 +44,7 @@
                                         <constraint firstAttribute="width" secondItem="1HO-OB-AJS" secondAttribute="height" multiplier="1:1" id="GgQ-4s-B1a"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="35"/>
-                                    <state key="normal" title="+-">
+                                    <state key="normal" title="⁺∕₋">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                 </button>
@@ -66,7 +66,7 @@
                                         <constraint firstAttribute="width" secondItem="SBB-kd-hHD" secondAttribute="height" multiplier="1:1" id="khz-Lp-S0S"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="35"/>
-                                    <state key="normal" title="/">
+                                    <state key="normal" title="÷">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                 </button>
@@ -115,7 +115,7 @@
                                         <constraint firstAttribute="width" secondItem="sfY-0F-4N0" secondAttribute="height" multiplier="1:1" id="19s-ez-CXi"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="35"/>
-                                    <state key="normal" title="X">
+                                    <state key="normal" title="×">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                 </button>
@@ -164,7 +164,7 @@
                                         <constraint firstAttribute="width" secondItem="nRU-Le-W1E" secondAttribute="height" multiplier="1:1" id="d1D-ZI-9ZG"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="35"/>
-                                    <state key="normal" title="-">
+                                    <state key="normal" title="−">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                 </button>
