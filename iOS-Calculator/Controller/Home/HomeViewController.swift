@@ -49,6 +49,7 @@ final class HomeViewController: UIViewController {
     // MARK: Constants
     private let kDecimalSeparator = Locale.current.decimalSeparator!
     private let kMaxLenght = 9
+    private let kTotal = "totalCalculator"
     
     private enum OperationType {
         case none, addiction, substraction, multiplication, division, percent
@@ -137,6 +138,8 @@ final class HomeViewController: UIViewController {
         operatorSubstraction.round()
         
         numberDecimal.setTitle(kDecimalSeparator, for: .normal)
+        total = UserDefaults.standard.double(forKey: kTotal)
+        result()
     }
 
     // MARK: Button Actions
@@ -172,6 +175,7 @@ final class HomeViewController: UIViewController {
         }
         operating = true
         operation = .addiction
+        sender.selectOperation(true)
         sender.shine()
     }
     
@@ -181,6 +185,7 @@ final class HomeViewController: UIViewController {
         }
         operating = true
         operation = .substraction
+        sender.selectOperation(true)
         sender.shine()
     }
     
@@ -190,6 +195,7 @@ final class HomeViewController: UIViewController {
         }
         operating = true
         operation = .multiplication
+        sender.selectOperation(true)
         sender.shine()
     }
     
@@ -199,6 +205,7 @@ final class HomeViewController: UIViewController {
         }
         operating = true
         operation = .division
+        sender.selectOperation(true)
         sender.shine()
     }
     
@@ -210,6 +217,7 @@ final class HomeViewController: UIViewController {
         
         resultLabel.text = resultLabel.text! + kDecimalSeparator
         decimal = true
+        selectVisualOperation()
         sender.shine()
     }
     
@@ -237,6 +245,7 @@ final class HomeViewController: UIViewController {
         temp = Double(currentTemp! + String(number))!
         
         resultLabel.text = printFormatter.string(from: NSNumber(value: temp))
+        selectVisualOperation()
         sender.shine()
         print(sender.tag)
     }
@@ -282,7 +291,48 @@ final class HomeViewController: UIViewController {
             resultLabel.text = printFormatter.string(from: NSNumber(value: total))
         }
         operation = .none
+        selectVisualOperation()
+        UserDefaults.standard.set(total, forKey: kTotal)
         print ("Total \(total)")
+    }
+    
+    private func selectVisualOperation() {
+        if !operating {
+            opertatorAdiction.selectOperation(false)
+            operatorSubstraction.selectOperation(false)
+            operatorMultiplication.selectOperation(false)
+            operatorDivision.selectOperation(false)
+        } else {
+            switch operation {
+                
+            case .none, .percent:
+                break
+            case .addiction:
+                opertatorAdiction.selectOperation(true)
+                operatorSubstraction.selectOperation(false)
+                operatorMultiplication.selectOperation(false)
+                operatorDivision.selectOperation(false)
+                break
+            case .substraction:
+                opertatorAdiction.selectOperation(false)
+                operatorSubstraction.selectOperation(true)
+                operatorMultiplication.selectOperation(false)
+                operatorDivision.selectOperation(false)
+                break
+            case .multiplication:
+                opertatorAdiction.selectOperation(false)
+                operatorSubstraction.selectOperation(false)
+                operatorMultiplication.selectOperation(true)
+                operatorDivision.selectOperation(false)
+                break
+            case .division:
+                opertatorAdiction.selectOperation(false)
+                operatorSubstraction.selectOperation(false)
+                operatorMultiplication.selectOperation(false)
+                operatorDivision.selectOperation(true)
+                break
+            }
+        }
     }
     
 }
