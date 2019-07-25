@@ -191,7 +191,6 @@ final class HomeViewController: UIViewController {
     @IBAction func numberDecimalAction(_ sender: UIButton) {
         let currentTemp = auxTotalFormatter.string(from: NSNumber(value: temp))!
         if resultLabel.text?.contains(kDecimalSeparator) ?? false || (!operating && currentTemp.count >= kMaxLength) {
-            
             return
         }
         
@@ -287,38 +286,34 @@ final class HomeViewController: UIViewController {
     }
     
     private func selectVisualOperation() {
+        print(operating)
         if !operating {
+            print("dentro")
             operatorAddiction.selectOperation(false)
             operatorSubstraction.selectOperation(false)
             operatorMultiplication.selectOperation(false)
             operatorDivision.selectOperation(false)
         } else {
+            operatorAddiction.selectOperation(false)
+            operatorSubstraction.selectOperation(false)
+            operatorMultiplication.selectOperation(false)
+            operatorDivision.selectOperation(false)
+
             switch operation {
                 
             case .none, .percent:
                 break
             case .addiction:
                 operatorAddiction.selectOperation(true)
-                operatorSubstraction.selectOperation(false)
-                operatorMultiplication.selectOperation(false)
-                operatorDivision.selectOperation(false)
                 break
             case .substraction:
-                operatorAddiction.selectOperation(false)
+                print("dentro del -")
                 operatorSubstraction.selectOperation(true)
-                operatorMultiplication.selectOperation(false)
-                operatorDivision.selectOperation(false)
                 break
             case .multiplication:
-                operatorAddiction.selectOperation(false)
-                operatorSubstraction.selectOperation(false)
                 operatorMultiplication.selectOperation(true)
-                operatorDivision.selectOperation(false)
                 break
             case .division:
-                operatorAddiction.selectOperation(false)
-                operatorSubstraction.selectOperation(false)
-                operatorMultiplication.selectOperation(false)
                 operatorDivision.selectOperation(true)
                 break
             }

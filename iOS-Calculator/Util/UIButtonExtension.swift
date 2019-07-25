@@ -25,6 +25,9 @@ extension UIButton {
     }
 
     func selectOperation(_ selected: Bool) {
+        print(self.titleLabel?.text)
+        print(selected)
+        print("--------------------------")
         backgroundColor = selected ? .white : orangeColor
         setTitleColor(selected ? orangeColor: .white, for: .normal)
     }
