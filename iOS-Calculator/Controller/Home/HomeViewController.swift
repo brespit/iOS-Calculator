@@ -173,43 +173,19 @@ final class HomeViewController: UIViewController {
     }
     
     @IBAction func operatorAddictionAction(_ sender: UIButton) {
-        if operation != .none {
-            result()
-        }
-        operating = true
-        operation = .addiction
-        sender.selectOperation(true)
-        sender.shine()
+        changeOperation(.addiction, sender)
     }
 
     @IBAction func operatorSubstractionAction(_ sender: UIButton) {
-        if operation != .none {
-            result()
-        }
-        operating = true
-        operation = .substraction
-        sender.selectOperation(true)
-        sender.shine()
+        changeOperation(.substraction, sender)
     }
     
     @IBAction func operatorMultiplicationAction(_ sender: UIButton) {
-        if operation != .none {
-            result()
-        }
-        operating = true
-        operation = .multiplication
-        sender.selectOperation(true)
-        sender.shine()
+        changeOperation(.multiplication, sender)
     }
     
     @IBAction func operatorDivisionAction(_ sender: UIButton) {
-        if operation != .none {
-            result()
-        }
-        operating = true
-        operation = .division
-        sender.selectOperation(true)
-        sender.shine()
+        changeOperation(.division, sender)
     }
     
     @IBAction func numberDecimalAction(_ sender: UIButton) {
@@ -252,6 +228,16 @@ final class HomeViewController: UIViewController {
         selectVisualOperation()
         sender.shine()
         print(sender.tag)
+    }
+    
+    private func changeOperation(_ newOperation: OperationType,_ sender: UIButton) {
+        if operation != .none {
+            result()
+        }
+        operating = true
+        operation = newOperation
+        sender.selectOperation(true)
+        sender.shine()
     }
     
     private func clear() {
