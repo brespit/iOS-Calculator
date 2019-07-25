@@ -24,13 +24,13 @@
                 <outlet property="number9" destination="JtJ-ZQ-ffl" id="kdq-en-2F2"/>
                 <outlet property="numberDecimal" destination="vd4-NJ-U0Y" id="fGm-eg-Cu5"/>
                 <outlet property="operatorAC" destination="FiL-YT-xv8" id="a13-FU-T6C"/>
+                <outlet property="operatorAddiction" destination="dXw-sK-kLS" id="njq-CS-07U"/>
                 <outlet property="operatorDivision" destination="SBB-kd-hHD" id="pR0-9F-Mep"/>
                 <outlet property="operatorMultiplication" destination="sfY-0F-4N0" id="gMQ-H6-5OS"/>
                 <outlet property="operatorPercent" destination="2cy-9q-t8V" id="fyt-Qy-mjk"/>
                 <outlet property="operatorPlusMinus" destination="1HO-OB-AJS" id="JtT-1s-dXx"/>
                 <outlet property="operatorResult" destination="Foo-Yg-Ahe" id="GEI-7G-DF0"/>
                 <outlet property="operatorSubstraction" destination="nRU-Le-W1E" id="8ZP-Ze-S6K"/>
-                <outlet property="opertatorAdiction" destination="dXw-sK-kLS" id="geT-Q4-xXF"/>
                 <outlet property="resultLabel" destination="y24-Lm-ZcQ" id="wOq-5D-oST"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -282,7 +282,7 @@
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
-                                        <action selector="opertatorAdictionAction:" destination="-1" eventType="touchUpInside" id="U2f-HD-3Wc"/>
+                                        <action selector="operatorAddictionAction:" destination="-1" eventType="touchUpInside" id="cTB-Sr-b1x"/>
                                     </connections>
                                 </button>
                             </subviews>

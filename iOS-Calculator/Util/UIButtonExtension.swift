@@ -12,7 +12,7 @@ private let orangeColor = UIColor(red: 254/255, green: 148/255, blue: 0/255, alp
 extension UIButton {
     
     func round() {
-        layer.cornerRadius = bounds.height/2 - 5 
+        layer.cornerRadius = bounds.height/2
         clipsToBounds = true
     }
     
